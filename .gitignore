@@ -1,0 +1,72 @@
+# .NET build artifacts
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code settings
+.vs/
+
+# Rider settings
+.idea/
+
+# ASP.NET secrets
+secrets.json
+
+# Build results
+*.dll
+*.exe
+*.app
+*.pdb
+
+# NuGet packages
+*.nupkg
+# The packages folder can be ignored if you use PackageReference
+packages/
+# NuGet v3's global-packages folder
+~/.nuget/packages
+
+# Dotnet CLI
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Logs
+*.log
+
+# Test results
+TestResults/
+*.trx
+
+# Publish outputs
+publish/
+*.publish.xml
+
+# Others
+*.vspscc
+*.vssscc
+*.dbmdl
+*.bak
+*.sql
+*.cache
+*.config.user
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# Local history for Visual Studio
+.localhistory/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# OS generated files
+.DS_Store
+*.swp
