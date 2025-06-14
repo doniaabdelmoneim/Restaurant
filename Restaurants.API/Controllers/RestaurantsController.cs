@@ -30,7 +30,7 @@ namespace Restaurants.API.Controllers
             {
                 return NotFound(new { Message = $"Restaurant with ID {id} not found." });
 
-            }
+            } 
 
             return Ok(restaurant);
 

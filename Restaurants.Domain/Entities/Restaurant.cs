@@ -13,7 +13,7 @@ namespace Restaurants.Domain.Entities
         public string? contactNumber { get; set; }
         public Address? address { get; set; }
 
-        //collecttions of dishes
+        //collections of dishes
         public List<Dish> Dishes { get; set; } = new ();
 
 
