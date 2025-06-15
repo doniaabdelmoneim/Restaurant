@@ -10,6 +10,7 @@ namespace Restaurants.Application.Extensions
         {
             // Register application services here
             services.AddScoped<IRestaurantsService, RestaurantsService>();
+            services.AddAutoMapper(typeof(ServiceCollectionExtensions).Assembly); 
         }
     }
 }

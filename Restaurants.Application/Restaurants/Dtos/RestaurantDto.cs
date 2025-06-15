@@ -16,34 +16,29 @@ namespace Restaurants.Application.Restaurants.Dtos
         public string? postalCode { get; set; }
 
         //collections of dishes
-        public List<DishDto> Dishes { get; set; } = new();
+        //new() === in .net 8 []
+        public List<DishDto> Dishes { get; set; } = [];
 
         //manal handling of the conversion from entity to DTO (like :autoMapper)
-        public static RestaurantDto? fromEntity(Restaurant? restaurant)
-        {
-            if (restaurant is null) return null!; 
-            
-            return new RestaurantDto
-            {
-                Id = restaurant.Id,
-                Name = restaurant.Name,
-                Description = restaurant.Description,
-                category = restaurant.category,
-                HasDelivery = restaurant.HasDelivery,
-                city = restaurant.address?.city,
-                street = restaurant.address?.street,
-                postalCode = restaurant.address?.postalCode,
-                //Dishes = restaurant.Dishes.Select(d => new DishDto
-                //{
-                //    Id = d.Id,
-                //    Name = d.Name,
-                //    Description = d.Description,
-                //    kiloCalories = d.kiloCalories,
-                //    Price = d.Price,
-                //    RestaurantId = d.RestaurantId
-                //}).ToList()
 
-            };
-        } 
+        //public static RestaurantDto? fromEntity(Restaurant? restaurant)
+        //{
+        //    if (restaurant is null) return null!; 
+            
+        //    return new RestaurantDto
+        //    {
+        //        Id = restaurant.Id,
+        //        Name = restaurant.Name,
+        //        Description = restaurant.Description,
+        //        category = restaurant.category,
+        //        HasDelivery = restaurant.HasDelivery,
+        //        city = restaurant.address?.city,
+        //        street = restaurant.address?.street,
+        //        postalCode = restaurant.address?.postalCode,
+        //        Dishes = restaurant.Dishes.Select(DishDto.fromEntity).ToList()
+
+        //    };
+
+       // } 
     }
 }

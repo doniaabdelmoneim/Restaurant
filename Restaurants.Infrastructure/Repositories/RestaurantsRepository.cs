@@ -1,5 +1,4 @@
-﻿
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Restaurants.Domain.Entities;
     using Restaurants.Infrastructure.Persistence;
 using Restaurants.Domain.Repositories;
@@ -15,10 +14,11 @@ namespace Restaurants.Infrastructure.Repositories
             return restaurants;
         }
 
-        public async Task<Restaurant> GetByIdAsync(int id)
+        public async Task<Restaurant?> GetByIdAsync(int id)
         {
-            var restaurant =await dbContext.Restaurants.FirstOrDefaultAsync(r => r.Id == id);
-            
+            var restaurant = await dbContext.Restaurants
+                .Include(r =>r.Dishes)
+                .FirstOrDefaultAsync(r => r.Id == id);
             return restaurant;
         }
     }
