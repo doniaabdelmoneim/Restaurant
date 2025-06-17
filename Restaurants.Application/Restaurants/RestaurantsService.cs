@@ -1,5 +1,4 @@
-﻿
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.Extensions.Logging;
 using Restaurants.Application.Restaurants.Dtos;
 using Restaurants.Domain.Entities;
@@ -12,7 +11,14 @@ namespace Restaurants.Application.Restaurants
                  ILogger<RestaurantsService> logger,
                  IMapper mapper):IRestaurantsService
         {
-            
+        public async Task<int> Create(createRestaurantDto Dto)
+        {
+            logger.LogInformation("Creating a new restaurant.");
+            var restaurant = mapper.Map<Restaurant>(Dto);
+            int id=await restaurantsRepository.Create(restaurant);
+            return id;
+        }
+
         public async Task<IEnumerable<RestaurantDto>> GetAllRestaurants()
         {
             logger.LogInformation("Fetching all restaurants from the repository.");
